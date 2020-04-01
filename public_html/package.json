@@ -1,0 +1,23 @@
+{
+  "name": "kursach.local",
+  "version": "1.0.0",
+  "description": "Курсовой проект",
+  "main": "public/index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gulnara-bask/kursach.local.git"
+  },
+  "author": "Danil",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gulnara-bask/kursach.local/issues"
+  },
+  "homepage": "https://github.com/gulnara-bask/kursach.local#readme",
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  }
+}
