@@ -1,8 +1,69 @@
-$test: #120
+*
+  font-family: Montserrat-Regular, sans-serif !important
+  color: white
 
-.test
- color: $test
+.bold
+  font-family: Montserrat-Bold, sans-serif !important
+  font-weight: bold
 
-.test2
- color: red
+html, body, .app
+  width: 100%
+  height: 100%
+
+body
+  background-image: url("../img/land-background.jpg")
+  background-repeat: no-repeat
+  background-size: cover
+
+
+// HEADER
+
+#logotype
+  font-family: Montserrat-Bold, sans-serif !important
+  font-weight: bold
+  font-size: 2em
+
+#navbarSupportedContent
+  font-family: Montserrat-Bold, sans-serif !important
+  font-weight: bold
+  font-size: 1.2em
+
+// HEADER-END
+
+
+// MAIN
+
+.land-main
+  padding-top: 200px
+
+// MAIN-END
+
+
+// FOOTER
+
+footer
+  position: absolute
+  bottom: 0
+  left: 0
+  width: 100%
+  height: 20px
+
+// FOOTER-END
+
+
+// MEDIA
+
+@media screen and (max-width: 600px)
+  .land-main
+    padding-top: 50px
+      //font-size: 2em !important
+
+@media screen and (max-width: 430px)
+  #logotype
+    font-size: 1.4em
+  .land-main
+    .main-text
+      font-size: 1.4em !important
+
+// MEDIA-END
 
