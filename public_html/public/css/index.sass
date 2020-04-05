@@ -12,6 +12,9 @@ hr
   height: 1px !important
   background-color: #979896
 
+html
+  overflow-y: scroll
+  overflow-x: hidden
 
 html, body, .app
   width: 100%
@@ -61,6 +64,11 @@ footer
 
 
 // MEDIA
+@media screen and (max-width: 768px)
+  .border-md-left
+    color: red !important
+    border-left: 1px
+    border-color: #979896
 
 @media screen and (max-width: 600px)
   .land-main
@@ -75,4 +83,50 @@ footer
       font-size: 1.4em !important
 
 // MEDIA-END
+
+
+
+// documentation.html
+
+.main
+  &__menu
+    color: black !important
+
+    &__item .link-in-container
+      padding-bottom: 15px
+
+    &__item
+      color: black !important
+      list-style-type: none
+
+    &__item a
+      padding-bottom: 15px
+      color: black !important
+      text-decoration: none
+      transition: 0.20s all ease
+
+    &__item .link-in
+      padding: 10px 10px 15px
+
+    &__item .link-in:hover
+      padding: 15px
+
+    &__item .bold-link
+
+      font-family: Montserrat-Bold, sans-serif !important
+      color: black !important
+      text-decoration: none
+
+    &__item .bold-link:hover
+      padding-left: 5px
+
+
+  &__content
+    color: black !important
+
+    &__header
+      font-family: Montserrat-Bold, sans-serif !important
+
+    *
+      color: black !important
 
