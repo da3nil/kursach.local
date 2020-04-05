@@ -64,12 +64,6 @@ footer
 
 
 // MEDIA
-@media screen and (max-width: 768px)
-  .border-md-left
-    color: red !important
-    border-left: 1px
-    border-color: #979896
-
 @media screen and (max-width: 600px)
   .land-main
     padding-top: 50px
@@ -82,6 +76,10 @@ footer
     .main-text
       font-size: 1.4em !important
 
+@media screen and (max-width: 315px)
+  #logotype
+    font-size: 1em
+
 // MEDIA-END
 
 
@@ -91,6 +89,7 @@ footer
 .main
   &__menu
     color: black !important
+    //position: fixed
 
     &__item .link-in-container
       padding-bottom: 15px
@@ -112,7 +111,6 @@ footer
       padding: 15px
 
     &__item .bold-link
-
       font-family: Montserrat-Bold, sans-serif !important
       color: black !important
       text-decoration: none

@@ -46,12 +46,6 @@ footer {
   width: 100%;
   height: 20px; }
 
-@media screen and (max-width: 768px) {
-  .border-md-left {
-    color: red !important;
-    border-left: 1px;
-    border-color: #979896; } }
-
 @media screen and (max-width: 600px) {
   .land-main {
     padding-top: 50px; } }
@@ -61,6 +55,10 @@ footer {
     font-size: 1.4em; }
   .land-main .main-text {
     font-size: 1.4em !important; } }
+
+@media screen and (max-width: 315px) {
+  #logotype {
+    font-size: 1em; } }
 
 .main__menu {
   color: black !important; }

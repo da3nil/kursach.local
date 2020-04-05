@@ -26,6 +26,7 @@
 
 
 <div class="app">
+
     <header class="container pt-md-3">
         <nav class="navbar navbar-expand-lg navbar-dark p-0">
 <!--            <a class="navbar-brand" href="#" id="logotype">-->
@@ -43,25 +44,24 @@
             <div class="collapse navbar-collapse pr-md-4" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Главная <span class="sr-only">(current)</span></a>
+                        <a class="nav-link transition" href="index.html">Главная <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="documentation.html">Документация</a>
+                        <a class="nav-link transition" href="documentation.html">Документация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transition" href="testing.html">Тестирование</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Что-то
+                            Настройка
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Светлая тема</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Темная тема</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Тестировние</a>
                     </li>
                 </ul>
             </div>
@@ -75,7 +75,7 @@
                     <h2 class="bold main-text">Различные способы управления сетью</h2>
                     <h2 class="bold main-text">Управление сетью с рабочей станции и с консоли сервера</h2>
                     <p class="lead mt-4">
-                        <a class="btn btn-danger btn-lg" href="documentation.html" role="button">
+                        <a class="btn btn-danger btn-lg transition" href="documentation.html" role="button">
                 <span class="d-flex">
                     <svg class="bi bi-play" width="1.3em" height="30px" viewBox="0 0 16 16" fill="currentColor"
                          xmlns="http://www.w3.org/2000/svg">
@@ -165,6 +165,24 @@
     };
 
 
+</script>
+
+<script>
+    $(document).ready(function() {
+        $("body").css("display", "none");
+
+        $("body").fadeIn(2000);
+
+        $("a.transition").click(function(event){
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(1000, redirectPage);
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
 </script>
 
 </body>

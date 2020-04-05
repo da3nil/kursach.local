@@ -46,25 +46,24 @@
             <div class="collapse navbar-collapse pr-md-4" id="navbarSupportedContent">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.html">Главная <span class="sr-only">(current)</span></a>
+                        <a class="nav-link transition" href="index.html">Главная <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item active">
-                        <a class="nav-link" href="documentation.html">Документация</a>
+                        <a class="nav-link transition" href="documentation.html">Документация</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link transition" href="testing.html">Тестирование</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
                            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Что-то
+                            Настройка
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
+                            <a class="dropdown-item" href="#">Светлая тема</a>
                             <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Something else here</a>
+                            <a class="dropdown-item" href="#">Темная тема</a>
                         </div>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Тестировние</a>
                     </li>
                 </ul>
             </div>
@@ -72,11 +71,11 @@
     </header>
     <main class="main pt-md-3">
 
-<!--        <hr>-->
-<!--        <div class="container">-->
-<!--            <h4>Лекция: Введение</h4>-->
-<!--        </div>-->
-<!--        <hr>-->
+        <hr>
+        <div class="container">
+            <h4 style="color: black">Лекция: <span style="color: black" id="name-lesson"></span></h4>
+        </div>
+        <hr>
 
         <div class="container">
             <div class="row">
@@ -85,22 +84,22 @@
                         <ul class="d-flex flex-column pl-0">
 
                             <li class="main__menu__item">
-                                <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t1" aria-expanded="true">Введение</a>
-                                <div id="t1" class="collapse" style="">
+                                <a onclick='load_theme("themes/1/1/index.html", "Введение. Основы сетей")' class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t1" aria-expanded="true">Введение</a>
+                                <div id="t1" class="collapse show" style="">
                                     <div class="link-in-container">
-                                        <a href="#" class="link-in">Названием темы</a>
+                                        <a onclick='load_theme("themes/1/1/index.html", "Введение. Основы сетей")' href="#" class="link-in">Основы сетей</a>
                                     </div>
                                     <div class="link-in-container">
-                                        <a href="#" class="link-in">Названием темы</a>
+                                        <a onclick='load_theme("themes/1/2/index.html", "Введение. Управление сетями")' href="#" class="link-in">Управление сетью</a>
                                     </div>
                                     <div class="link-in-container">
-                                        <a href="#" class="link-in">Названием темы</a>
+                                        <a href="#" class="link-in">Что-то <3</a>
                                     </div>
                                 </div>
                             </li>
 
                             <li class="main__menu__item">
-                                <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t2" aria-expanded="true">Введение</a>
+                                <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t2" aria-expanded="true">Какая-то тема</a>
                                 <div id="t2" class="collapse" style="">
                                     <div class="link-in-container">
                                         <a href="#" class="link-in">Названием темы</a>
@@ -115,7 +114,7 @@
                             </li>
 
                             <li class="main__menu__item">
-                                <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t3" aria-expanded="true">Введение</a>
+                                <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t3" aria-expanded="true">Придумайте сами</a>
                                 <div id="t3" class="collapse" style="">
                                     <div class="link-in-container">
                                         <a href="#" class="link-in">Названием темы</a>
@@ -140,8 +139,7 @@
 <!--                            </div>-->
 <!--                        </div>-->
                         <div class="main__content_container p-2">
-                            <h3 class="main__content__header">Введение</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolore ex provident, saepe sint soluta vero voluptatum. Alias beatae debitis deserunt distinctio eos illo, mollitia necessitatibus, nisi rem, repellendus rerum velit!</p>
+                            <div id="content"></div>
                         </div>
                     </div>
                 </div>
@@ -160,199 +158,36 @@
 <script src="js/bootstrap.min.js"></script>
 <script src="js/bootstrap.bundle.min.js"></script>
 
-<!-- Particles -->
-<script src="js/particles.js"></script>
-
 <script>
-    var TxtRotate = function(el, toRotate, period) {
-        this.toRotate = toRotate;
-        this.el = el;
-        this.loopNum = 0;
-        this.period = parseInt(period, 10) || 2000;
-        this.txt = '';
-        this.tick();
-        this.isDeleting = false;
-    };
 
-    TxtRotate.prototype.tick = function() {
-        var i = this.loopNum % this.toRotate.length;
-        var fullTxt = this.toRotate[i];
+    function load_theme(path, name) {
+        $("#content").css("display", "none");
+        console.log(name);
+        $("#name-lesson").text("«" + name + "»");
+        $("#content").load(path).fadeIn(1000);
+    }
 
-        if (this.isDeleting) {
-            this.txt = fullTxt.substring(0, this.txt.length - 1);
-        } else {
-            this.txt = fullTxt.substring(0, this.txt.length + 1);
-        }
-
-        this.el.innerHTML = '<span class="wrap">'+this.txt+'</span>';
-
-        var that = this;
-        var delta = 300 - Math.random() * 100;
-
-        if (this.isDeleting) { delta /= 2; }
-
-        if (!this.isDeleting && this.txt === fullTxt) {
-            delta = this.period;
-            this.isDeleting = true;
-        } else if (this.isDeleting && this.txt === '') {
-            this.isDeleting = false;
-            this.loopNum++;
-            delta = 500;
-        }
-
-        setTimeout(function() {
-            that.tick();
-        }, delta);
-    };
-
-    window.onload = function() {
-        var elements = document.getElementsByClassName('txt-rotate');
-        for (var i=0; i<elements.length; i++) {
-            var toRotate = elements[i].getAttribute('data-rotate');
-            var period = elements[i].getAttribute('data-period');
-            if (toRotate) {
-                new TxtRotate(elements[i], JSON.parse(toRotate), period);
-            }
-        }
-        // INJECT CSS
-        var css = document.createElement("style");
-        css.type = "text/css";
-        css.innerHTML = ".txt-rotate > .wrap { border-right: 0.08em solid #666 }";
-        document.body.appendChild(css);
-    };
-
-    particlesJS('particles-js',
-
-        {
-            "particles": {
-                "number": {
-                    "value": 70,
-                    "density": {
-                        "enable": true,
-                        "value_area": 800
-                    }
-                },
-                "color": {
-                    "value": "#ffffff"
-                },
-                "shape": {
-                    "type": "circle",
-                    "stroke": {
-                        "width": 0,
-                        "color": "#000000"
-                    },
-                    "polygon": {
-                        "nb_sides": 5
-                    },
-                    "image": {
-                        "src": "img/github.svg",
-                        "width": 100,
-                        "height": 100
-                    }
-                },
-                "opacity": {
-                    "value": 0.5,
-                    "random": false,
-                    "anim": {
-                        "enable": false,
-                        "speed": 1,
-                        "opacity_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "size": {
-                    "value": 5,
-                    "random": true,
-                    "anim": {
-                        "enable": false,
-                        "speed": 40,
-                        "size_min": 0.1,
-                        "sync": false
-                    }
-                },
-                "line_linked": {
-                    "enable": true,
-                    "distance": 150,
-                    "color": "#ffffff",
-                    "opacity": 0.4,
-                    "width": 1
-                },
-                "move": {
-                    "enable": true,
-                    "speed": 6,
-                    "direction": "none",
-                    "random": false,
-                    "straight": false,
-                    "out_mode": "out",
-                    "attract": {
-                        "enable": false,
-                        "rotateX": 600,
-                        "rotateY": 1200
-                    }
-                }
-            },
-            "interactivity": {
-                "detect_on": "canvas",
-                "events": {
-                    "onhover": {
-                        "enable": false,
-                        "mode": "repulse"
-                    },
-                    "onclick": {
-                        "enable": true,
-                        "mode": "push"
-                    },
-                    "resize": true
-                },
-                "modes": {
-                    "grab": {
-                        "distance": 400,
-                        "line_linked": {
-                            "opacity": 1
-                        }
-                    },
-                    "bubble": {
-                        "distance": 400,
-                        "size": 40,
-                        "duration": 2,
-                        "opacity": 8,
-                        "speed": 3
-                    },
-                    "repulse": {
-                        "distance": 200
-                    },
-                    "push": {
-                        "particles_nb": 4
-                    },
-                    "remove": {
-                        "particles_nb": 2
-                    }
-                }
-            },
-            "retina_detect": true,
-            "config_demo": {
-                "hide_card": false,
-                "background_color": "#131921",
-                "background_image": "",
-                "background_position": "50% 50%",
-                "background_repeat": "no-repeat",
-                "background_size": "cover"
-            }
-        }
-
-    );
+    load_theme("themes/1/1/index.html", "Введение. Основы сетей");
 
 
-    var count_particles, update;
-    count_particles = document.querySelector('.js-count-particles');
-    update = function() {
-        if (window.pJSDom[0].pJS.particles && window.pJSDom[0].pJS.particles.array) {
-            // count_particles.innerText = window.pJSDom[0].pJS.particles.array.length;
-        }
-        requestAnimationFrame(update);
-    };
-    requestAnimationFrame(update);
 </script>
 
+<script>
+    $(document).ready(function() {
+        $("body").css("display", "none");
+
+        $("body").fadeIn(2000);
+
+        $("a.transition").click(function(event){
+            event.preventDefault();
+            linkLocation = this.href;
+            $("body").fadeOut(1000, redirectPage);
+        });
+
+        function redirectPage() {
+            window.location = linkLocation;
+        }
+    });
+</script>
 </body>
 </html>
