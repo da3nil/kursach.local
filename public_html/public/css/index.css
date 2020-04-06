@@ -89,3 +89,9 @@ footer {
     font-family: Montserrat-Bold, sans-serif !important; }
   .main__content * {
     color: black !important; }
+  .main__content #frame {
+    border: none;
+    width: 100%;
+    height: 100%; }
+    .main__content #frame * {
+      overflow-y: hidden; }
