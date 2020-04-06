@@ -1,4 +1,5 @@
-var currentTab = 0; // Current tab is set to be the first tab (0)
+let currentTab = 0; // Current tab is set to be the first tab (0)
+let right_answers = 0; // Верные ответы
 showTab(currentTab); // Display the current tab
 
 function showTab(n) {
@@ -11,10 +12,10 @@ function showTab(n) {
     } else {
         document.getElementById("prevBtn").style.display = "inline";
     }
-    if (n == (x.length - 1)) {
-        document.getElementById("nextBtn").innerHTML = "Submit";
+    if (n === (x.length - 1)) {
+        document.getElementById("nextBtn").innerHTML = "Завершить";
     } else {
-        document.getElementById("nextBtn").innerHTML = "Next";
+        document.getElementById("nextBtn").innerHTML = "Следующий";
     }
     // ... and run a function that displays the correct step indicator:
     fixStepIndicator(n)
@@ -31,8 +32,7 @@ function nextPrev(n) {
     currentTab = currentTab + n;
     // if you have reached the end of the form... :
     if (currentTab >= x.length) {
-        //...the form gets submitted:
-        document.getElementById("regForm").submit();
+        checkForm();
         return false;
     }
     // Otherwise, display the correct tab:
@@ -44,11 +44,10 @@ function validateForm() {
     var x, y, i, valid = true;
     x = document.getElementsByClassName("tab");
     y = x[currentTab].getElementsByTagName("input");
-    console.log(y);
     valid = false;
     // A loop that checks every input field in the current tab:
     for (i = 0; i < y.length; i++) {
-        // If a field is empty...
+
         if (y[i].checked === true) {
             // add an "invalid" class to the field:
             y[i].className += " valid";
@@ -58,6 +57,7 @@ function validateForm() {
     }
     // If the valid status is true, mark the step as finished and valid:
     if (valid) {
+
         document.getElementsByClassName("step")[currentTab].className += " finish";
     }
     return valid; // return the valid status
@@ -72,3 +72,30 @@ function fixStepIndicator(n) {
     //... and adds the "active" class to the current step:
     x[n].className += " active";
 }
+
+function checkForm() {
+
+    let x;
+
+    x = $("#regForm input");
+    right_answers = 0;
+
+    for (i = 0; i < x.length; i++)
+    {
+        if (x[i].checked  && x[i].dataset.true === "1") {
+            right_answers++;
+        }
+    }
+
+    $("#regForm").css("display", "none");
+    $("#result-container").css("display", "block");
+
+    $("#result").text(right_answers);
+
+    if (right_answers >= 6) {
+        $("#success").css("display", "block");
+    } else {
+        $("#fail").css("display", "block");
+    }
+}
+

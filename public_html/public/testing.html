@@ -19,86 +19,20 @@
 
     <!-- Fonts -->
     <link rel="stylesheet" href="css/fonts.css">
+
+    <!-- Form style -->
+    <link rel="stylesheet" href="css/form.css">
+
     <title>Курсовой проект</title>
 
-    <style>
-
-        .main * {
-            color: black !important;
-        }
-
-        /* Style the form */
-        #regForm {
-            background-color: #ffffff;
-            margin: 100px auto;
-            /*padding: 40px;*/
-            width: 70%;
-            min-width: 300px;
-        }
-
-        label {
-            display: block;
-        }
-
-        /* Style the input fields */
-        input {
-            padding: 10px;
-            /*width: 100%;*/
-            font-size: 17px;
-            font-family: Raleway;
-            border: 1px solid #aaaaaa;
-        }
-
-        /* Mark input boxes that gets an error on validation: */
-        input.invalid {
-            background-color: #ffdddd;
-        }
-
-        /* Hide all steps by default: */
-        .tab {
-            display: none;
-        }
-
-        /* Make circles that indicate the steps of the form: */
-        .step {
-            height: 15px;
-            width: 15px;
-            margin: 0 2px;
-            background-color: #bbbbbb;
-            border: none;
-            border-radius: 50%;
-            display: inline-block;
-            opacity: 0.5;
-        }
-
-        /* Mark the active step: */
-        .step.active {
-            opacity: 1;
-        }
-
-        /* Mark the steps that are finished and valid: */
-        .step.finish {
-            background-color: #4CAF50;
-        }
-    </style>
 </head>
-<body class="" style="background-color: white; /*background: rgb(9,9,121);background: linear-gradient(135deg, rgba(9,9,121,1) 0%, rgba(153,8,137,1) 100%);*/">
+<body class="" style="background-color: #9669af;">
 
 <div class="app">
-    <!--    <section class="particles position-absolute" style="height: 100%; width: 100%;">-->
-    <!--        <div id="particles-js" class="particles__container particles-js-canvas-el" style="height: 100%; width: 100%;">-->
 
-    <!--            <canvas class="particles-js-canvas-el" width="891" height="1093" style="width: 100%; height: 100%;"></canvas></div>-->
-    <!--    </section>-->
     <header class="container pt-md-3">
-        <nav class="navbar navbar-expand-lg navbar-light p-0">
-            <!--            <a class="navbar-brand" href="#" id="logotype">-->
-            <!--                <span-->
-            <!--                        class="txt-rotate"-->
-            <!--                        data-period="2000"-->
-            <!--                        data-rotate='[ "Курсовой проект", "Автор - Прытков Данил", "Научный руководитель - Парамонов Ю.С"]'></span>-->
-            <!--            </a>-->
-            <a class="navbar-brand" href="#" style="color: #ff2d20" id="logotype">Курсовой проект</a>
+        <nav class="navbar navbar-expand-lg navbar-dark p-0">
+            <a class="navbar-brand" href="#" style="" id="logotype">Курсовой проект</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -132,56 +66,90 @@
     </header>
     <main class="main pt-md-3">
         <div class="container">
+            <div  id="result-container" class="text-center" style="display: none; margin: 100px auto;
+                width: 70%;
+                min-width: 300px;">
+                <h1>Ваш результат: <span id="result">0</span> из 10</h1>
+                <h3 style="display: none;" id="success" class="">Вы успешно усвоили материал</h3>
+                <h3 style="display: none;"id="fail" class="">Вы плохо усвоили материал</h3>
+            </div>
             <form id="regForm" action="">
                 <div class="tab">
                     <h1>1. Что такое "компьютерная сеть"?</h1>
                     <label>
-                        <input type="radio" name="v1" value="1"> Вариант ответа
+                        <input type="radio" name="v1" value="1" data-true="1"> Вариант ответа
                     </label>
                     <label>
-                        <input type="radio" name="v1" value="2"> Вариант ответа
+                        <input type="radio" name="v1" value="2" data-true="0"> Вариант ответа
                     </label>
                     <label>
-                        <input type="radio" name="v1" value="3"> Вариант ответа
+                        <input type="radio" name="v1" value="3" data-true="0"> Вариант ответа
                     </label>
                 </div>
 
                 <div class="tab">
                     <h1>2. Вопросы?</h1>
                     <label>
-                        <input type="radio" name="v2" value="1"> Вариант ответа
+                        <input type="radio" name="v2" value="1" data-true="0"> Вариант ответа
                     </label>
                     <label>
-                        <input type="radio" name="v2" value="2"> Вариант ответа
+                        <input type="radio" name="v2" value="2" data-true="1"> Вариант ответа
                     </label>
                     <label>
-                        <input type="radio" name="v2" value="3"> Вариант ответа
+                        <input type="radio" name="v2" value="3" data-true="0"> Вариант ответа
                     </label>
                 </div>
 
                 <div class="tab">
                     <h1>3. Придумайте сами...</h1>
                     <label>
-                        <input type="radio" name="v3" value="1"> Вариант ответа
+                        <input type="radio" name="v3" value="1" data-true="1"> Вариант ответа
                     </label>
                     <label>
-                        <input type="radio" name="v3" value="2"> Вариант ответа
+                        <input type="radio" name="v3" value="2" data-true="1"> Вариант ответа
                     </label>
                     <label>
-                        <input type="radio" name="v3" value="3"> Вариант ответа
+                        <input type="radio" name="v3" value="3" data-true="1"> Вариант ответа
+                    </label>
+                </div>
+
+                <div class="tab">
+                    <h1>4. Придумайте сами...</h1>
+                    <label>
+                        <input type="radio" name="v4" value="1" data-true="1"> Вариант ответа
+                    </label>
+                    <label>
+                        <input type="radio" name="v4" value="2" data-true="1"> Вариант ответа
+                    </label>
+                    <label>
+                        <input type="radio" name="v4" value="3" data-true="1"> Вариант ответа
+                    </label>
+                </div>
+
+                <div class="tab">
+                    <h1>5. Придумайте сами...</h1>
+                    <label>
+                        <input type="radio" name="v5" value="1" data-true="1"> Вариант ответа
+                    </label>
+                    <label>
+                        <input type="radio" name="v5" value="2" data-true="1"> Вариант ответа
+                    </label>
+                    <label>
+                        <input type="radio" name="v5" value="3" data-true="1"> Вариант ответа
                     </label>
                 </div>
 
 
                 <div style="overflow:auto;">
                     <div style="float:right;">
-                        <button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-                        <button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+                        <button class="btn-2" style="color: black !important;" type="button" id="prevBtn" onclick="nextPrev(-1)">Предыдущий</button>
+                        <button class="btn-2" style="color: black !important;" type="button" id="nextBtn" onclick="nextPrev(1)">Следующий</button>
                     </div>
                 </div>
 
                 <!-- Circles which indicates the steps of the form: -->
                 <div style="text-align:center;margin-top:40px;">
+                    <span class="step"></span>
                     <span class="step"></span>
                     <span class="step"></span>
                     <span class="step"></span>

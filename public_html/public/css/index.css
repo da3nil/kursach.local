@@ -65,10 +65,12 @@ footer {
   .main__menu__item .link-in-container {
     padding-bottom: 15px; }
   .main__menu__item {
+    padding-bottom: 15px;
     color: black !important;
     list-style-type: none; }
+    .main__menu__item > div {
+      padding-top: 15px; }
   .main__menu__item a {
-    padding-bottom: 15px;
     color: black !important;
     text-decoration: none;
     transition: 0.20s all ease; }
