@@ -62,11 +62,11 @@
         <div class="container">
             <h4 style="color: black">Лекция: <span style="color: black" id="name-lesson"></span></h4>
         </div>
-        <hr>
+        <hr class="mb-0">
 
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col-md-3">
+                <div class="col-md-3 h-100 pt-2" style="background: linear-gradient(0deg,#fff,#f5f5fa);">
                     <div class="main__menu p-2">
                         <ul id="accordion" class="d-flex flex-column pl-0">
 
@@ -197,6 +197,15 @@
 
 <!-- Gorizontal scroll-->
 <script src="js/gorizontal-scroll.js"></script>
+
+<script>
+    if (('ontouchstart' in window) || window.DocumentTouch && document instanceof DocumentTouch) {
+        console.log('this is a touch device');
+    } else {
+        console.log('this is not a touch device');
+        document.body.classList.add('no-touch');
+    }
+</script>
 
 
 </body>

@@ -85,6 +85,7 @@ footer
 
 
 // documentation.html
+//    background: linear-gradient(0deg,#fff,#f5f5fa);
 
 .main
   &__menu
@@ -112,8 +113,14 @@ footer
     //&__item .link-in
       //123
 
-    &__item .link-in-container:hover
+    &__item .link-in-container:active
       padding-left: 15px
+
+    .no-touch &__item .link-in-container:hover
+      padding-left: 15px
+
+    //&__item .link-in-container:before
+    //  padding-left: 0
 
     &__item .bold-link
       //font-family: Montserrat-Bold, sans-serif !important
@@ -124,7 +131,10 @@ footer
     &__item .bold-link-container
       transition: 0.20s all ease
 
-    &__item .bold-link-container:hover
+    .no-touch &__item .bold-link-container:hover
+      padding-left: 5px
+
+    &__item .bold-link-container:active
       padding-left: 5px
 
 

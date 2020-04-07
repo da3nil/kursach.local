@@ -75,7 +75,9 @@ footer {
     color: black !important;
     text-decoration: none;
     transition: 0.20s all ease; }
-  .main__menu__item .link-in-container:hover {
+  .main__menu__item .link-in-container:active {
+    padding-left: 15px; }
+  .no-touch .main__menu__item .link-in-container:hover {
     padding-left: 15px; }
   .main__menu__item .bold-link {
     font-weight: bold;
@@ -83,7 +85,9 @@ footer {
     text-decoration: none; }
   .main__menu__item .bold-link-container {
     transition: 0.20s all ease; }
-  .main__menu__item .bold-link-container:hover {
+  .no-touch .main__menu__item .bold-link-container:hover {
+    padding-left: 5px; }
+  .main__menu__item .bold-link-container:active {
     padding-left: 5px; }
 
 .main__content {
