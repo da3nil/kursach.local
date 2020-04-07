@@ -16,7 +16,7 @@ html {
 
 html, body, .app {
   width: 100%;
-  height: 100%; }
+  height: 100% !important; }
 
 body {
   background-color: #0f054c; }
@@ -63,26 +63,27 @@ footer {
 .main__menu {
   color: black !important; }
   .main__menu__item .link-in-container {
-    padding-bottom: 15px; }
+    padding: 10px 10px 15px;
+    transition: 0.20s all ease; }
   .main__menu__item {
     padding-bottom: 15px;
     color: black !important;
     list-style-type: none; }
-    .main__menu__item > div {
+    .main__menu__item > div > div {
       padding-top: 15px; }
   .main__menu__item a {
     color: black !important;
     text-decoration: none;
     transition: 0.20s all ease; }
-  .main__menu__item .link-in {
-    padding: 10px 10px 15px; }
-  .main__menu__item .link-in:hover {
-    padding: 15px; }
+  .main__menu__item .link-in-container:hover {
+    padding-left: 15px; }
   .main__menu__item .bold-link {
-    font-family: Montserrat-Bold, sans-serif !important;
+    font-weight: bold;
     color: black !important;
     text-decoration: none; }
-  .main__menu__item .bold-link:hover {
+  .main__menu__item .bold-link-container {
+    transition: 0.20s all ease; }
+  .main__menu__item .bold-link-container:hover {
     padding-left: 5px; }
 
 .main__content {
@@ -93,7 +94,7 @@ footer {
     color: black !important; }
   .main__content #frame {
     border: none;
-    width: 100%;
-    height: 100%; }
+    width: 100% !important;
+    height: 2000px; }
     .main__content #frame * {
-      overflow-y: hidden; }
+      overflow-y: hidden !important; }

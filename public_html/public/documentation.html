@@ -16,6 +16,7 @@
 
     <!-- Compiled styles from sass -->
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/gor-scroll.css">
 
     <!-- Fonts -->
     <link rel="stylesheet" href="css/fonts.css">
@@ -24,10 +25,15 @@
 </head>
 <body class="" style="background-color: white;">
 
+<progress class="custom-progress" value="0">
+    <div class="progress-container">
+        <span class="custom-progress-bar"></span>
+    </div>
+</progress>
 
 
 <div class="app">
-    <header class="container pt-md-3">
+    <header class="container pt-md-3 pt-4">
         <nav class="navbar navbar-expand-lg navbar-light p-0">
             <a class="navbar-brand" href="#" style="color: #ff2d20" id="logotype">Курсовой проект</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
@@ -50,7 +56,7 @@
             </div>
         </nav>
     </header>
-    <main class="main pt-md-3">
+    <main class="main pt-md-3 h-100">
 
         <hr>
         <div class="container">
@@ -58,49 +64,114 @@
         </div>
         <hr>
 
-        <div class="container">
-            <div class="row">
+        <div class="container h-100">
+            <div class="row h-100">
                 <div class="col-md-3">
                     <div class="main__menu p-2">
-                        <ul class="d-flex flex-column pl-0">
+                        <ul id="accordion" class="d-flex flex-column pl-0">
 
                             <li class="main__menu__item">
-                                <a onclick='load_theme("documents/section_1/theme_1/index.html", "Введение. Основы сетей")' class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t1" aria-expanded="true">Введение</a>
-                                <div id="t1" class="collapse show" style="">
-                                    <div class="link-in-container">
-                                        <a onclick='load_theme("documents/section_1/theme_1/index.html", "Введение. Основы сетей")' href="#" class="link-in">Основы сетей</a>
-                                    </div>
-                                    <div class="link-in-container">
-                                        <a onclick='load_theme("documents/section_1/theme_2/index.html", "Введение. Управление сетями")' href="#" class="link-in">Управление сетью</a>
-                                    </div>
-                                    <div class="link-in-container">
-                                        <a href="#" class="link-in">Что-то <3</a>
+                                <div class="bold-link-container">
+                                    <a onclick="load_theme('documents/section_1/theme_1/index.html', 'Введение', 1050);" class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t1"
+                                       aria-expanded="true" aria-controls="t1">Введение</a>
+                                </div>
+                            </li>
+
+                            <li class="main__menu__item">
+                                <div class="bold-link-container">
+                                    <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t2"
+                                       aria-expanded="true" aria-controls="t2">Архитектура управления сети</a>
+                                </div>
+                                <div id="t2" class="collapse show" data-parent="#accordion" style="">
+                                    <div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_2/theme_1/index.html', 'Архитектура управления сети. Протоколы управления', 1050);" href="#" class="link-in">Протоколы управления</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_2/theme_2/index.html', 'Архитектура управления сети. Протокол SNMP', 1050);" href="#" class="link-in">Протокол SNMP</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_2/theme_3/index.html', 'Архитектура управления сети. Модель управления, основанная на SNMP', 1050);" href="#" class="link-in">Модель управления, основанная на SNMP</a>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
 
                             <li class="main__menu__item">
-                                <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t3" aria-expanded="true">Придумайте сами</a>
-                                <div id="t3" class="collapse" style="">
-                                    <div class="link-in-container">
-                                        <a href="#" class="link-in">Названием темы</a>
-                                    </div>
-                                    <div class="link-in-container">
-                                        <a href="#" class="link-in">Названием темы</a>
-                                    </div>
-                                    <div class="link-in-container">
-                                        <a href="#" class="link-in">Названием темы</a>
+                                <div class="bold-link-container">
+                                    <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t3"
+                                       aria-expanded="true" aria-controls="t3">Модель управления сети ISO</a>
+                                </div>
+                                <div id="t3" class="collapse" style="" data-parent="#accordion">
+                                    <div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_3/theme_1/index.html', 'Модель управления сети ISO. Стандартизация сетей', 1050);" href="#" class="link-in">Стандартизация сетей</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_3/theme_2/index.html', 'Модель управления сети ISO. Управление эффективностью', 1050);" href="#" class="link-in">Управление эффективностью</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_3/theme_3/index.html', 'Модель управления сети ISO. Управление конфигурацией', 1050);" href="#" class="link-in">Управление конфигурацией</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_3/theme_4/index.html', 'Модель управления сети ISO. Управление учетом использования ресурсов', 1050);" href="#" class="link-in">Управление учетом использования ресурсов</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_3/theme_5/index.html', 'Модель управления сети ISO. Управление неисправностями', 1050);" href="#" class="link-in">Управление неисправностями</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_3/theme_6/index.html', 'Модель управления сети ISO. Управление защитой данных', 1050);" href="#" class="link-in">Управление защитой данных</a>
+                                        </div>
                                     </div>
                                 </div>
                             </li>
 
+                            <li class="main__menu__item">
+                                <div class="bold-link-container">
+                                    <a class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t4"
+                                       aria-expanded="true" aria-controls="t4">Средства удаленного доступа к серверам</a>
+                                </div>
+                                <div id="t4" class="collapse" style="" data-parent="#accordion">
+                                    <div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_4/theme_1/index.html', 'Средства удаленного доступа к серверам. Ramin', 1050);" href="#" class="link-in">Radmin</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_4/theme_2/index.html', 'Средства удаленного доступа к серверам. TeamViewer', 1050);" href="#" class="link-in">TeamViewer</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_4/theme_3/index.html', 'Средства удаленного доступа к серверам. Remote Desktop Connection', 1050);" href="#" class="link-in">Remote Desktop Connection</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_4/theme_4/index.html', 'Средства удаленного доступа к серверам. UltraVNC', 1050);" href="#" class="link-in">UltraVNC</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+
+                            <li class="main__menu__item">
+                                <div class="bold-link-container">
+                                    <a onclick="load_theme('documents/section_1/theme_1/index.html', 'Консольное подключение', 1050);" class="bold-link" href="#" type="button" data-toggle="collapse" data-target="#t5"
+                                       aria-expanded="true" aria-controls="t5">Консольное подключение</a>
+                                </div>
+                                <div id="t5" class="collapse" style="" data-parent="#accordion">
+                                    <div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_1/theme_1/index.html', 'Консольное подключение. Windows', 1050);" href="#" class="link-in">Windows</a>
+                                        </div>
+                                        <div class="link-in-container">
+                                            <a onclick="load_theme('documents/section_1/theme_1/index.html', 'Консольное подключение. Linux', 1050);" href="#" class="link-in">Linux</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>
-                <div class="col-md-9 h-100" style="height: 100vh !important;">
+                <div class="col-md-9 h-100" style="">
                     <div class="main__content h-100">
                         <div class="main__content_container p-2 h-100">
-                            <iframe class="h-100" id="frame" src="" scrolling="no"></iframe>
+                            <iframe frameborder="0" id="frame" src="" scrolling="no"></iframe>
                         </div>
                     </div>
                 </div>
@@ -123,6 +194,10 @@
 
 <!-- Transitions-->
 <script src="js/transition.js"></script>
+
+<!-- Gorizontal scroll-->
+<script src="js/gorizontal-scroll.js"></script>
+
 
 </body>
 </html>
