@@ -92,7 +92,7 @@ function checkForm() {
 
     $("#result").text(right_answers);
 
-    if (right_answers >= 6) {
+    if (right_answers >= 3) {
         $("#success").css("display", "block");
     } else {
         $("#fail").css("display", "block");
