@@ -99,6 +99,6 @@ footer {
   .main__content #frame {
     border: none;
     width: 100% !important;
-    height: 2000px; }
+    height: 3000px; }
     .main__content #frame * {
       overflow-y: hidden !important; }

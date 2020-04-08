@@ -66,7 +66,7 @@
 
         <div class="container h-100">
             <div class="row h-100">
-                <div class="col-md-3 h-100 pt-2" style="background: linear-gradient(0deg,#fff,#f5f5fa);">
+                <div class="col-md-3 pt-2" style="/*background: linear-gradient(0deg,#fff,#f5f5fa); /*">
                     <div class="main__menu p-2">
                         <ul id="accordion" class="d-flex flex-column pl-0">
 
@@ -171,6 +171,8 @@
                 <div class="col-md-9 h-100" style="">
                     <div class="main__content h-100">
                         <div class="main__content_container p-2 h-100">
+
+                            <!-- var iframe = $("#frame");iframe.height($(document.body).height() + 100);-->
                             <iframe frameborder="0" id="frame" src="" scrolling="no"></iframe>
                         </div>
                     </div>
@@ -205,6 +207,13 @@
         console.log('this is not a touch device');
         document.body.classList.add('no-touch');
     }
+</script>
+
+<script>
+    console.log("Автокоррекция высоты фрейма");
+    var iframe = $("#frame");
+    var additionHeight = 2500;
+    iframe.height($(document.body).height() + additionHeight);
 </script>
 
 

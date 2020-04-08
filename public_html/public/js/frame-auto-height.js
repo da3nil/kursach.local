@@ -1,4 +1,6 @@
-console.log("123");
+console.log("Коррекция высоты фрейма");
 
 var iframe = $('#frame', parent.document.body);
-iframe.height($(document.body).height() + 100);
+const h = $(document.body).height() + 100;
+console.log(h);
+iframe.height(h);
