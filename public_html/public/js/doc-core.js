@@ -14,3 +14,5 @@ const name_lesson = $("#name-lesson");
 let tmout = true;
 
 load_theme("documents/section_1/theme_1/index.html", "Введение", 1000);
+var elems = $(".bold-link")[0].style.textDecoration = 'underline';;
+console.log(elems);

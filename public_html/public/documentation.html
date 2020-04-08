@@ -68,7 +68,7 @@
 
         <div class="row h-100">
 
-<div class="col-md-3 h-100" style="background: linear-gradient(0deg,#fff,#f5f5fa); !important; ">
+<div class="col-md-3" style="background: linear-gradient(0deg,#fff,#f5f5fa); !important; ">
     <div class=" h-100 pt-2" >
     <div class="main__menu p-2">
         <ul id="accordion" class="d-flex flex-column pl-0 text-sticky pl-5">
@@ -246,10 +246,19 @@
 <script>
     console.log("Автокоррекция высоты фрейма");
     var iframe = $("#frame");
-    var additionHeight = 2500;
+    var additionHeight = 3000;
     iframe.height($(document.body).height() + additionHeight);
 </script>
 
+<script>
+    var prevent = $(".bold-link")[0];
+    $(".bold-link-container, .link-in-container").click(function (event) {
+        prevent.style.textDecoration = 'none';
+        var e = event.target;
+        prevent = e;
+        e.style.textDecoration = 'underline';
+    });
+</script>
 
 </body>
 </html>
